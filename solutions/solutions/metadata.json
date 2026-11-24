@@ -1,0 +1,22 @@
+{
+  "title": "Solutions",
+  "type": ["Getting Started", "Solutions"],
+  "description": "Production-ready DEEPCRAFT\u2122 Ready Models and edge AI software solutions from Infineon — the fastest way to production in the Hub.",
+  "thumbnail_image_id": "deepcraft_ai_suite.webp",
+  "main_image_id": "deepcraft_ai_suite.webp",
+  "brand_image_id": "deepcraft.webp",
+  "long_description": "<p>The Solutions section features fully developed models and applications you can download, evaluate on supported hardware, and integrate into your product—without training a model from scratch. Solutions skip the full model development cycle and give you field-proven models already optimized for Infineon MCUs. Each solution includes metadata for sensors, target devices, compatible kits, application domains, and performance metrics (memory usage, inference time, and power where available). Solutions are maintained by Infineon and are not open for community contribution.</p> <p>On the cards you'll typically find information about the Edge AI solution, the performance and metrics for the solution and a link that takes you to the product pages and where you can get started with the evaluating the solution.</p>",
+  "brand_url": "https://www.infineon.com/design-resources/embedded-software/deepcraft-edge-ai-solutions",
+  "links": [
+    {
+      "label": "Product Pages",
+      "url": "https://www.infineon.com/design-resources/embedded-software/deepcraft-edge-ai-solutions",
+      "heading": "DEEPCRAFT\u2122 AI Suite Product Pages",
+      "sub-heading": "All documentation and information about full DEEPCRAFT\u2122 AI Suite"
+    }
+  ],
+  "sensors": ["Microphone", "Radar"],
+  "device": ["PSOC\u2122 6", "PSOC\u2122 Edge", "AURIX\u2122 TC4x", "AURIX\u2122 TC3x", "XENSIV\u2122 Radar BGT60TR13C"],
+  "kit": ["PSOC\u2122 Edge Eval Kit", "PSOC\u2122 Edge AI Kit", "PSOC\u2122 6 AI Kit", "XENSIV\u2122 KIT_CSK_BGT60TR13C"],
+  "application": ["Smart Home", "Appliances", "Healthcare", "Industrial IoT"]
+}
