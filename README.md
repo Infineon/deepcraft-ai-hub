@@ -39,8 +39,8 @@ deepcraft-ai-hub/
 ├── deepcraft-model-zoo-for-aurix/ # Submodule: AURIX™ models
 ├── deepcraft-model-zoo-for-psoc/  # Submodule: PSoC™ Edge models
 ├── deepcraft-studio-accelerators/ # Submodule: Ready-to-use solutions
-├── ai-hub-default-images/         # Submodule: Default/fallback image assets
-├── images/                        # Submodule: Shared image assets
+├── ai-hub-default-images/         # Default/fallback image assets
+├── images/                        # Shared image assets
 └── README.md                      # This file
 ```
 
@@ -57,7 +57,7 @@ deepcraft-ai-hub/
 
 ```bash
 # Clone the repository with all submodules
-git clone --recursive https://github.com/Reyev123/deepcraft-ai-hub.git
+git clone --recursive https://github.com/Infineon/deepcraft-ai-hub.git
 cd deepcraft-ai-hub
 
 # Or if already cloned, initialize submodules
@@ -138,8 +138,8 @@ git submodule update --remote deepcraft-model-zoo-for-aurix
 | [deepcraft-model-zoo-for-aurix](https://github.com/Infineon/deepcraft-model-zoo-for-aurix) | AI models for AURIX™ microcontrollers | AURIX™ TC3x/TC4x |
 | [deepcraft-model-zoo-for-psoc](https://github.com/Infineon/deepcraft-model-zoo-for-psoc) | AI models for PSoC™ Edge devices | PSoC™ Edge |
 | [deepcraft-studio-accelerators](https://github.com/Infineon/deepcraft-studio-accelerators) | Ready-to-use AI solutions | Multi-platform |
-| [images](https://github.com/Reyev123/images) | Shared image assets used across the hub | N/A |
-| [ai-hub-default-images](https://github.com/Reyev123/ai-hub-default-images) | Default/fallback image assets for the AI Hub | N/A |
+| [images](./images) | Shared image assets used across the hub | N/A |
+| [ai-hub-default-images](./ai-hub-default-images) | Default/fallback image assets for the AI Hub | N/A |
 
 ## 🔧 Maintenance
 
@@ -176,6 +176,6 @@ This project is licensed under the MIT License - see individual submodules for t
 
 ---
 
-**Maintained by**: [Reyev123](https://github.com/Reyev123)  
+**Maintained by**: [Infineon](https://github.com/Infineon/deepcraft-ai-hub)  
 **Last Updated**: October 2025
 
