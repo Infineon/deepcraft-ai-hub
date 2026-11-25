@@ -1,0 +1,68 @@
+name: Production AWS AI HUB workflow 
+
+on:
+  workflow_dispatch:
+    inputs:
+      # Optional inputs can be defined here   
+
+env:
+  BUCKET_NAME : "aihub-prod-ui"
+  AWS_REGION : "us-east-1"
+
+permissions:
+  id-token: write   # This is required for requesting the JWT
+  contents: write   # This is required for actions/checkout and pushing master_prod.json
+
+jobs:
+  S3PackageUploadDevelopment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git clone the repository
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::425515537310:role/AI-HUB-GIT-HUB
+          role-session-name: aihubsession
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Update submodules
+        run: |
+          git submodule update --init --recursive --remote
+
+      - name: Convert metadata.json files to .json in ModelJsons
+        run: |
+          chmod +x .github/scripts/master.sh
+          .github/scripts/master.sh
+
+      - name: Invalidate Bucket Cache
+        run: |
+          aws cloudfront create-invalidation --distribution-id E6312ZA9FCXWU --paths "/*"    
+
+      - name: Publish master.json to repo root as master_prod.json
+        run: |
+          cp ./master.json ./master_prod.json
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add master_prod.json
+          if git diff --cached --quiet; then
+            echo "No changes to master_prod.json"
+          else
+            git commit -m "chore: update master_prod.json [skip ci]"
+            git push origin HEAD:${{ github.ref_name }}
+          fi
+
+      # Upload a file to AWS S3
+      - name: Copy master.json to S3
+        run: |
+          aws s3 cp ./master.json s3://${{ env.BUCKET_NAME }}/ 
+          
+      - name: Merge ai-hub-default-images into images (no override)
+        run: |
+          cp -rn ./ai-hub-default-images/. ./images/
+
+      - name: Upload images folder to S3
+        run: |
+          aws s3 sync ./images s3://${{ env.BUCKET_NAME }}/images
+    
