@@ -1,0 +1,23 @@
+{
+  "id": "resources-test-new-repo-hello-world",
+  "title": "Resources TEST NEW REPO Hello World",
+  "description": "Thsi is a test",
+  "long_description": "This is just a TEST.",
+  "algorithm": ["Object Detection"],
+  "sensors": ["Camera"],
+  "domain": ["Vision"],
+  "application": ["Automotive"],
+  "use_case": ["Driver Assistance"],
+  "kit": ["PSOC\u2122 Edge AI Kit", "PSOC\u2122 Edge Eval Kit"],
+  "device": ["PSOC\u2122 Edge"],
+  "type": "Resources",
+  "content_type": "Article",
+  "workflow": ["ML Deployment"],
+  "thumbnail_image_id": "city.webp",
+  "main_image_id": "city.webp",
+  "brand_image_id": "deepcraft.webp",
+  "brand_url": "https://www.infineon.com/design-resources/embedded-software/deepcraft-edge-ai-solutions",
+  "videos": [{"title": "This Is A Video From Automotive", "description": "This video is a TEST", "link": "https://www.youtube.com/watch?v=bPd7jMxg2C4"}],
+  "links": [{"label": "Learn More", "url": "https://www.infineon.com/about/industry-insights/mobility", "heading": "Shaping Future Of Mobility", "sub-heading": "This is a TEST"}],
+  "published_date": "2026-11-25"
+}
